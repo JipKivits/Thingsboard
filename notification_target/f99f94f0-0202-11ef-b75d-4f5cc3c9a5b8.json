@@ -1,0 +1,22 @@
+{
+  "entityType" : "NOTIFICATION_TARGET",
+  "entity" : {
+    "configuration" : {
+      "type" : "PLATFORM_USERS",
+      "description" : "All users in scope of the tenant",
+      "usersFilter" : {
+        "type" : "ALL_USERS"
+      }
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "NOTIFICATION_TARGET",
+      "id" : "f99f94f0-0202-11ef-b75d-4f5cc3c9a5b8"
+    },
+    "name" : "All users"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

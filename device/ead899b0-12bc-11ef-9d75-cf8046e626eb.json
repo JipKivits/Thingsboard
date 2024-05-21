@@ -1,0 +1,108 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "gateway" : true
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "f96bb3b0-0202-11ef-b75d-4f5cc3c9a5b8"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "ead899b0-12bc-11ef-9d75-cf8046e626eb"
+    },
+    "label" : "",
+    "name" : "My Gateway",
+    "softwareId" : null,
+    "type" : "default"
+  },
+  "credentials" : {
+    "credentialsId" : "iTiJPJCynsM5w6M3IeEW",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1715943917764,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[]",
+      "key" : "inactive_connectors",
+      "lastUpdateTs" : 1715936707724,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1715943917276,
+      "longValue" : 1715943916944,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1715943286548,
+      "longValue" : 1715943284093,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1715936693098,
+      "longValue" : 1715936693098,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1715943284097,
+      "longValue" : 1715943284097,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"name\":\"SQLtest\",\"type\":\"odbc\",\"logLevel\":\"DEBUG\",\"configuration\":\"sqLtest.json\",\"configurationJson\":{\"connection\":{\"str\":\"Driver={/opt/microsoft/msodbcsql18/lib64/libmsodbcsql-18.3.so.3.1};Server=NLDC01VS602;Database=VIM_VBS;Trusted_Connection=yes;TrustServerCertificate=yes\",\"attributes\":{\"autocommit\":true,\"timeout\":0},\"encoding\":\"utf-8\",\"decoding\":{\"char\":\"utf-8\",\"wchar\":\"utf-8\",\"metadata\":\"utf-16le\"},\"reconnect\":true,\"reconnectPeriod\":60},\"polling\":{\"query\":\"SELECT TOP 10 machine_id, naam FROM dbo.machine\",\"period\":60,\"iterator\":{\"column\":\"machine_id\",\"query\":\"SELECT MIN(machine_id) FROM dbo.machine\",\"save\":false}},\"mapping\":{\"device\":{\"type\":\"odbc\",\"name\":\"'ODBC ' + machine_name\"},\"sendDataOnlyOnChange\":false,\"attributes\":\"*\",\"timeseries\":[{\"name\":\"machineIdentifier\",\"column\":\"machine_id\"},{\"name\":\"machineName\",\"column\":\"naam\"}]},\"logLevel\":\"DEBUG\",\"name\":\"SQL\",\"enableRemoteLogging\":false,\"id\":\"c6c9e3d8-2ac1-43ac-a27e-bf60aab0a247\"},\"ts\":1715939218227}",
+      "key" : "SQLtest",
+      "lastUpdateTs" : 1715939218252,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[\"SQLtest\"]",
+      "key" : "active_connectors",
+      "lastUpdateTs" : 1715938485839,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

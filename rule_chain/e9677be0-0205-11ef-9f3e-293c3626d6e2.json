@@ -1,0 +1,549 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : null,
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "e9677be0-0205-11ef-9f3e-293c3626d6e2"
+    },
+    "name" : "C42 AAS",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 12,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : null,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 373,
+        "layoutY" : 303
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "http://172.17.0.1:8081/submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vT3BlcmF0aW9uYWxEYXRh/submodel-elements/Temperatures.RoomTemp/$value",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : false,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : { },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e9767000-0205-11ef-9f3e-293c3626d6e2"
+      },
+      "name" : "GetRoomTemp",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 950,
+        "layoutY" : 303
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e9781db0-0205-11ef-9f3e-293c3626d6e2"
+      },
+      "name" : "Save Timeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 651,
+        "layoutY" : 304
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = {\r\n        \"Room Temperature\": msg\r\n    };\r\n\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e97892e1-0205-11ef-9f3e-293c3626d6e2"
+      },
+      "name" : "parse data",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 67,
+        "layoutY" : 302
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "originatorId" : "276a9350-0206-11ef-9f3e-293c3626d6e2",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e978e100-0205-11ef-9f3e-293c3626d6e2"
+      },
+      "name" : "Call API",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 377,
+        "layoutY" : 441
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "http://172.17.0.1:8081/submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vT3BlcmF0aW9uYWxEYXRh/submodel-elements/Temperatures.SpindleTemp/$value",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : false,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : { },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c25f5b10-0d3d-11ef-bba7-1f4a5547a068"
+      },
+      "name" : "GetSpindleTemp",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 954,
+        "layoutY" : 441
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c25fd040-0d3d-11ef-bba7-1f4a5547a068"
+      },
+      "name" : "Save Timeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 655,
+        "layoutY" : 442
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = {\r\n        \"Spindle Temperature\": msg\r\n    };\r\n\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c261a500-0d3d-11ef-bba7-1f4a5547a068"
+      },
+      "name" : "parse data",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 71,
+        "layoutY" : 440
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "originatorId" : "33322b80-0206-11ef-9f3e-293c3626d6e2",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c2621a30-0d3d-11ef-bba7-1f4a5547a068"
+      },
+      "name" : "Call API",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 376,
+        "layoutY" : 570
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "http://172.17.0.1:8081/submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vT3BlcmF0aW9uYWxEYXRh/submodel-elements/Report.MachineProgramState/$value",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : true,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : { },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fdc4a150-11cb-11ef-aaf6-1f4a5547a068"
+      },
+      "name" : "GetMachineProgramState",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 953,
+        "layoutY" : 570
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fdd9d700-11cb-11ef-aaf6-1f4a5547a068"
+      },
+      "name" : "Save Timeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 654,
+        "layoutY" : 571
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = {\r\n        \"machineProgramState\": msg\r\n    };\r\n\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fddf7c50-11cb-11ef-aaf6-1f4a5547a068"
+      },
+      "name" : "parse data",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 70,
+        "layoutY" : 569
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "originatorId" : "3af5a090-0206-11ef-9f3e-293c3626d6e2",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fde596d0-11cb-11ef-aaf6-1f4a5547a068"
+      },
+      "name" : "Call API",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 374,
+        "layoutY" : 695
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "http://172.17.0.1:8081/submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vT3BlcmF0aW9uYWxEYXRh/submodel-elements/Report.MachineState/$value",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : false,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : { },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "08739d90-11cc-11ef-aaf6-1f4a5547a068"
+      },
+      "name" : "GetMachineState",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 951,
+        "layoutY" : 695
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "087487f0-11cc-11ef-aaf6-1f4a5547a068"
+      },
+      "name" : "Save Timeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 652,
+        "layoutY" : 696
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg = {\r\n        \"machineState\": msg\r\n    };\r\n\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0874d610-11cc-11ef-aaf6-1f4a5547a068"
+      },
+      "name" : "parse data",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 68,
+        "layoutY" : 694
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "originatorId" : "1c904150-0206-11ef-9f3e-293c3626d6e2",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "08780a60-11cc-11ef-aaf6-1f4a5547a068"
+      },
+      "name" : "Call API",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
