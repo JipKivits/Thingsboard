@@ -6,7 +6,10 @@
     },
     "configuration" : null,
     "debugMode" : false,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "e9677be0-0205-11ef-9f3e-293c3626d6e2"
+    },
     "firstRuleNodeId" : null,
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -65,6 +68,18 @@
       "fromIndex" : 15,
       "toIndex" : 12,
       "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 18,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 17,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 16,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -102,7 +117,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "e9767000-0205-11ef-9f3e-293c3626d6e2"
+        "id" : "f4ba03d0-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "GetRoomTemp",
       "queueName" : null,
@@ -126,7 +141,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "e9781db0-0205-11ef-9f3e-293c3626d6e2"
+        "id" : "f4ba2ae0-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "Save Timeseries",
       "queueName" : null,
@@ -150,7 +165,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "e97892e1-0205-11ef-9f3e-293c3626d6e2"
+        "id" : "f4ba7900-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "parse data",
       "queueName" : null,
@@ -169,7 +184,7 @@
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
-        "originatorId" : "276a9350-0206-11ef-9f3e-293c3626d6e2",
+        "originatorId" : "39294160-271b-11ef-8b7e-137786b5dd31",
         "originatorType" : "DEVICE"
       },
       "configurationVersion" : 1,
@@ -178,7 +193,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "e978e100-0205-11ef-9f3e-293c3626d6e2"
+        "id" : "f4bac720-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "Call API",
       "queueName" : null,
@@ -220,7 +235,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c25f5b10-0d3d-11ef-bba7-1f4a5547a068"
+        "id" : "f4bb1540-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "GetSpindleTemp",
       "queueName" : null,
@@ -244,7 +259,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c25fd040-0d3d-11ef-bba7-1f4a5547a068"
+        "id" : "f4bb3c50-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "Save Timeseries",
       "queueName" : null,
@@ -268,7 +283,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c261a500-0d3d-11ef-bba7-1f4a5547a068"
+        "id" : "f4bb8a70-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "parse data",
       "queueName" : null,
@@ -287,7 +302,7 @@
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
-        "originatorId" : "33322b80-0206-11ef-9f3e-293c3626d6e2",
+        "originatorId" : "e83eebe0-271c-11ef-bfa3-b32565defb6b",
         "originatorType" : "DEVICE"
       },
       "configurationVersion" : 1,
@@ -296,7 +311,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c2621a30-0d3d-11ef-bba7-1f4a5547a068"
+        "id" : "f4bbb180-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "Call API",
       "queueName" : null,
@@ -338,7 +353,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fdc4a150-11cb-11ef-aaf6-1f4a5547a068"
+        "id" : "f4bbffa0-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "GetMachineProgramState",
       "queueName" : null,
@@ -362,7 +377,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fdd9d700-11cb-11ef-aaf6-1f4a5547a068"
+        "id" : "f4bc4dc0-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "Save Timeseries",
       "queueName" : null,
@@ -378,7 +393,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var newMsg = {\r\n        \"machineProgramState\": msg\r\n    };\r\n\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\r\n"
+        "tbelScript" : "if (msg == 7)\r\n    msg = \"0\";\r\nvar newMsg = {\r\n        \"machineProgramState\": msg\r\n    };\r\n\r\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};\r\n"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -386,7 +401,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fddf7c50-11cb-11ef-aaf6-1f4a5547a068"
+        "id" : "f4bc74d0-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "parse data",
       "queueName" : null,
@@ -405,7 +420,7 @@
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
-        "originatorId" : "3af5a090-0206-11ef-9f3e-293c3626d6e2",
+        "originatorId" : "f736b560-271c-11ef-bfa3-b32565defb6b",
         "originatorType" : "DEVICE"
       },
       "configurationVersion" : 1,
@@ -414,7 +429,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fde596d0-11cb-11ef-aaf6-1f4a5547a068"
+        "id" : "f4bc9be0-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "Call API",
       "queueName" : null,
@@ -452,11 +467,11 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "08739d90-11cc-11ef-aaf6-1f4a5547a068"
+        "id" : "f4bcea00-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "GetMachineState",
       "queueName" : null,
@@ -480,7 +495,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "087487f0-11cc-11ef-aaf6-1f4a5547a068"
+        "id" : "f4bd5f30-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "Save Timeseries",
       "queueName" : null,
@@ -504,7 +519,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "0874d610-11cc-11ef-aaf6-1f4a5547a068"
+        "id" : "f4bdad50-1c1f-11ef-8b01-ad0da57be540"
       },
       "name" : "parse data",
       "queueName" : null,
@@ -523,7 +538,7 @@
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
-        "originatorId" : "1c904150-0206-11ef-9f3e-293c3626d6e2",
+        "originatorId" : "9fa55eb0-271b-11ef-8b7e-137786b5dd31",
         "originatorType" : "DEVICE"
       },
       "configurationVersion" : 1,
@@ -532,7 +547,125 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "08780a60-11cc-11ef-aaf6-1f4a5547a068"
+        "id" : "f4bdd460-1c1f-11ef-8b01-ad0da57be540"
+      },
+      "name" : "Call API",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 372,
+        "layoutY" : 823
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "http://172.17.0.1:8081/submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vT3BlcmF0aW9uYWxEYXRh/submodel-elements/Report.ActiveProgram/$value",
+        "requestMethod" : "GET",
+        "useSimpleClientHttpFactory" : false,
+        "parseToPlainText" : false,
+        "ignoreRequestBody" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : { },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : null,
+        "maxQueueSize" : null,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "90fe3f90-23e1-11ef-9c32-137786b5dd31"
+      },
+      "name" : "GetActiveProgram",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 949,
+        "layoutY" : 823
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "91028550-23e1-11ef-9c32-137786b5dd31"
+      },
+      "name" : "Save Timeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 650,
+        "layoutY" : 824
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var newMsg;\r\nvar programnr = \"\";\r\n\r\nif (msg == \"\")\r\n{\r\n    var newMsg = {\r\n        \"Active Program\": \"No Program\"\r\n        };\r\n    return {msg: newMsg, metadata: metadata, msgType: msgType};\r\n}\r\nfor (int i = 0; i < msg.length; i++) {\r\n    if (!(msg[i] >= \"a\" && msg[i] <= \"z\") &&\r\n        !(msg[i] >= \"A\" && msg[i] <= \"Z\") &&\r\n        (msg[i] != \"\\\\\" && msg[i] != \":\")) \r\n    {\r\n        if (msg[i] == \"-\")\r\n        {\r\n            var newMsg = {\r\n            \"Active Program\": programnr\r\n            };\r\n            return {msg: newMsg, metadata: metadata, msgType: msgType};\r\n        } \r\n        else \r\n        {\r\n            programnr += msg[i];\r\n        }\r\n    }\r\n}\r\n\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9102fa80-23e1-11ef-9c32-137786b5dd31"
+      },
+      "name" : "parse data",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 66,
+        "layoutY" : 822
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 5,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "originatorId" : "fd1f01d0-271c-11ef-bfa3-b32565defb6b",
+        "originatorType" : "DEVICE"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "91036fb0-23e1-11ef-9c32-137786b5dd31"
       },
       "name" : "Call API",
       "queueName" : null,

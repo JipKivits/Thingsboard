@@ -17,7 +17,10 @@
       }
     },
     "etag" : "bd54fd77c92956984d0298c4e18ad1c830831b535121d1fc9497036c49f08b49",
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "TB_RESOURCE",
+      "id" : "052013e0-0d39-11ef-bba7-1f4a5547a068"
+    },
     "fileName" : "2560px-VDL-Logo.svg.png",
     "id" : {
       "entityType" : "TB_RESOURCE",

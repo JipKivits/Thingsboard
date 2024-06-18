@@ -11,7 +11,10 @@
     "city" : null,
     "country" : null,
     "email" : "teamlead@company.com",
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "b5c71920-0d00-11ef-bba7-1f4a5547a068"
+    },
     "id" : {
       "entityType" : "CUSTOMER",
       "id" : "b5c71920-0d00-11ef-bba7-1f4a5547a068"

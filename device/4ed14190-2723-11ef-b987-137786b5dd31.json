@@ -1,0 +1,96 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "lastConnectedGateway" : "6ba699b0-271d-11ef-bfa3-b32565defb6b"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "52f8a6d0-1c30-11ef-8b01-ad0da57be540"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "28cd9e80-1dcd-11ef-9f4d-b32565defb6b"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "4ed14190-2723-11ef-b987-137786b5dd31"
+    },
+    "label" : null,
+    "name" : "VBS 9096709",
+    "softwareId" : null,
+    "type" : "None"
+  },
+  "credentials" : {
+    "credentialsId" : "grr9ybJE73SxqDIVkCyD",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "6ba699b0-271d-11ef-bfa3-b32565defb6b"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "4ed14190-2723-11ef-b987-137786b5dd31"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1718693977164,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1718363394024,
+      "longValue" : 1718363394011,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1718694858747,
+      "longValue" : 1718694856466,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1718693977163,
+      "longValue" : 1718693977163,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1718362779929,
+      "longValue" : 1718362779929,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

@@ -6,7 +6,10 @@
     },
     "configuration" : null,
     "debugMode" : false,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "05bf57e0-0206-11ef-9f3e-293c3626d6e2"
+    },
     "firstRuleNodeId" : null,
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -133,7 +136,7 @@
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
         "tbelScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
-        "originatorId" : "2d30b1c0-0206-11ef-9f3e-293c3626d6e2",
+        "originatorId" : "f31183f0-1c1f-11ef-8b01-ad0da57be540",
         "originatorType" : "DEVICE"
       },
       "configurationVersion" : 1,
